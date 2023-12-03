@@ -48,48 +48,6 @@ exports.getAllPosts = catchAsyncErrors( async (req, res, next) => {
 });
 
 
-//POST request
-//api/v1/post
-// exports.createPost = catchAsyncErrors(async (req, res, next) => {
-//   // Use req.file.location for the image URL if using AWS S3
-//   const { title, description, tags } = req.body;
-//   console.log(req.body)
-// //   const image = req.file.location;
-// console.log(req.file)
-// // console.log(title, description, tags, "iamge344")
-
-//   if (!title || !description || !tags) {
-//     return next(new ErrorHandler('title, description or tags cannot be empty', 400));
-// }
-
-//   console.log('req.file.buffer:', req.file.buffer);
-
-//     // S3 configuration
-//     const params = {
-//         Bucket: process.env.AWS_BUCKET_NAME,
-//         Key: `uploads/${req.file.originalname}`, // Change the key as needed
-//         Body: req.file.buffer,
-//       };
-  
-//   try {
-//       // Upload the image to S3
-//       const data = await s3.upload(params).promise();
-//       const s3Url = data.Location;
-
-//        // Save the post in your database with the S3 URL
-//     const post = await Post.create({ title, description, image: s3Url, tags });
-
-//     res.status(201).json(post);
-//   } catch (error) {
-//     console.log(error)
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// });
-
-
-
-
-
 exports.createPost = catchAsyncErrors(async (req, res, next) => {
   const { title, description, tags } = req.body;
 

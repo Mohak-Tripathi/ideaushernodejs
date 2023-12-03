@@ -16,8 +16,7 @@ exports.createTag = catchAsyncErrors(async (req, res, next) => {
     const existingTag = await Tag.findOne({ name });
 
     if (existingTag) {
-      return next(new ErrorHandler('Tag with the same name already exists', 404));
-      // return res.status(400).json({ error: 'Tag with the same name already exists' });
+      return res.status(400).json({ error: 'Tag with the same name already exists' });
     }
     const newTag = await Tag.create({ name });
     res.status(201).json(newTag);
