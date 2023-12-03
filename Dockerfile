@@ -23,7 +23,7 @@ USER node
 
 
 # Expose the port that the application listens on.
-EXPOSE 8080
+EXPOSE 80
 
 # Run the application.
 CMD node app.js

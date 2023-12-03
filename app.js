@@ -51,7 +51,7 @@ app.use(errorMiddleware);
 
 // const PORT = process.env.PORT;
 
-const server = app.listen(8080, () => {
+const server = app.listen(80, () => {
   console.log(
     `Server is listening at port ${process.env.PORT} in ${process.env.NODE_ENV} mode`
   );
